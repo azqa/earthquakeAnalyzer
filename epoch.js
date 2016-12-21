@@ -1,11 +1,11 @@
-function processData() {
+function processData(countryName) {
    var allRows=epochData;
           console.log(allRows);
           var x = [], y1 = [], y2= [], y3 = [];
 
           for (var i=0; i<allRows.length; i++) {
           row = allRows[i];
-          if(row['Country']=="CHINA")
+          if(row['Country']==countryName)
             {
              x.push( row['Year'] );
              y1.push( row['frequency'] );
@@ -308,6 +308,6 @@ Plotly.plot('plotly-div', {
         document.querySelector('[data-title=Autoscale]').click(); 
          };
          
-       processData();
+       processData("PAKISTAN");
        
          
