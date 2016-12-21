@@ -1,31 +1,28 @@
-
 <!DOCTYPE html>
+
 <html>
 <head>
+<script src="jquery.min.js"></script>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	  <script src="chartdata.js"></script>
  </head>
    <body>
    <!-- Plotly chart will be drawn inside this div -->
    <div id="plotly-div" style="min-width: 800px; height: 800px; margin: 0 auto"></div>
-     
-     <script type="text/javascript">
-         function makeplot() 
-         {
-           Plotly.d3.csv("chartdata.csv", function(data){ processData(data)}); 
-        };
-        function processData(allRows) {
-
+<script type="text/javascript">
+function processData() {
+   var allRows=epochData;
           console.log(allRows);
           var x = [], y1 = [], y2= [], y3 = [];
 
           for (var i=0; i<allRows.length; i++) {
           row = allRows[i];
-          if(row['Country']=="HAITI")
+          if(row['Country']=="CHINA")
             {
              x.push( row['Year'] );
-             y1.push( row['no of eq per year'] );
-             y2.push(row['Avg magnitude']);
-             y3.push(row['Avg Damage index']);
+             y1.push( row['frequency'] );
+             y2.push(row['magnitude']);
+             y3.push(row['damageIndex']);
             }
            }
          console.log( 'X',x, 'Y',y1, 'Y2',y2, 'Y3', y3 );
@@ -320,10 +317,10 @@ Plotly.plot('plotly-div', {
   data: data,
   layout: layout
 });
-        document.querySelector('[#plotly-div="Autoscale"]').click();
+        $('#plotly-div').click();
          };
          
-       makeplot();
+       processData();
        
          
      </script>

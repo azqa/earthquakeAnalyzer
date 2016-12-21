@@ -57,9 +57,9 @@
          
         }//for
       console.log(x);
-
+var icon2 = "imageB.jpg";
       var markers = x.map(function(location, i) {
-        return new google.maps.Marker({
+        var mark = new google.maps.Marker({
             position: location,
             label: labels[i],
             color: 'blue', 
@@ -69,12 +69,16 @@
               new google.maps.Point(10, 34))
 
           });
+         google.maps.event.addListener(mark, 'mouseover', function() {
+    mark.setIcon(icon2);
+});
+return mark;
         });
         
          
       var markerCluster = new MarkerClusterer(map, markers,
            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-      }//window.eqfeed_callback
+      }
     
 
     </script>
