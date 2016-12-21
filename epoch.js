@@ -1,4 +1,6 @@
-function processData(countryName) {
+var data,layout;
+
+function processData(countryName,init) {	
    var allRows=epochData;
           console.log(allRows);
           var x = [], y1 = [], y2= [], y3 = [];
@@ -15,10 +17,13 @@ function processData(countryName) {
            }
          console.log( 'X',x, 'Y',y1, 'Y2',y2, 'Y3', y3 );
          Makeplotly(x, y1, y2, y3);
-        }
+		 if(init){
+		 Plotly.newPlot(epoch,data,layout);
+		 document.querySelector('[data-title=Autoscale]').click(); 
+		 }
+ }
         function Makeplotly(x, y1, y2, y3)
-         {
-             
+         {  
         trace1 ={
         x: x, 
         y: y1,
@@ -300,14 +305,20 @@ layout = {
     zerolinewidth: 1
   }
 };
-             
-Plotly.plot('plotly-div', {
-  data: data,
-  layout: layout
-});
-        document.querySelector('[data-title=Autoscale]').click(); 
-         };
-         
-       processData("PAKISTAN");
-       
+
+		 };     
+
+function redrawPlot(countryName,init)
+{	
+	//console.log(countryName);	
+processData(countryName,init);
+if(!init)
+{
+	epoch.data= data;
+
+	Plotly.redraw(epoch);
+}
+}
+redrawPlot("PAKISTAN",true);
+     
          

@@ -82,6 +82,7 @@ var icon2 = "imageB.jpg";
         
         mark.addListener('mouseover', function() {
         infowindow.open(map, mark);
+		redrawPlot(mark.label,false);
         });
 
 return mark;
