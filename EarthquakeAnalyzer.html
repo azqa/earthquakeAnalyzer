@@ -7,14 +7,25 @@
        * element that contains the map. */
        /* use chrome and not firefox*/
       #map {
-        height: 100%;
+        min-width: 600px; 
+		height: 500px; 
 		width: 50%;
-		float:left;
+		margin: 0 auto; 
+		float: left;
       }
 	  #epoch{
-	  float:left;
-	  width: 20%;
-	  height: 50%;
+	  min-width: 600px; 
+	  height: 500px; 
+	  width: 50%;
+	  margin: 0 auto;
+	  float: right;
+	  }
+	  h1 {
+	  text-align: center;
+	  }
+	  h4{
+	  	  text-align: right;
+
 	  }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -25,14 +36,20 @@
       }
 	 </style>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="chartdata.js"></script>
 	<script src="biggerPicture.js"></script>
     </head>
   <body>
-    <div id="map"></div>
-	<div id="epoch"></div>
-	  <script src="epoch.js"></script>
+    <h1>Earthquake Analyzer</h1>
+    <div id="map" style=""></div>
+	<div id="epoch" style=""></div>
+	
+	<hr/>
+	<h4>© Azqa, Jaya, Priyanka, Sneha</h4>
+	
+	<script src="epoch.js"></script>
 	<script src ="worldmap.js"></script>
 	<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2sGhfk_6qEdfgC3Nf00GWqUQPLYyN4o8&callback=initMap"></script>

@@ -1,9 +1,10 @@
 var data,layout;
-
+var x = [], y1 = [], y2= [], y3 = [];
 function processData(countryName,init) {	
+x = [], y1 = [], y2= [], y3 = [];
    var allRows=epochData;
           console.log(allRows);
-          var x = [], y1 = [], y2= [], y3 = [];
+          
 
           for (var i=0; i<allRows.length; i++) {
           row = allRows[i];
@@ -16,307 +17,160 @@ function processData(countryName,init) {
             }
            }
          console.log( 'X',x, 'Y',y1, 'Y2',y2, 'Y3', y3 );
-         Makeplotly(x, y1, y2, y3);
+         MakePlot(x, y1, y2, y3);
 		 if(init){
-		 Plotly.newPlot(epoch,data,layout);
-		 document.querySelector('[data-title=Autoscale]').click(); 
+		 Highcharts.chart('epoch',layout);
 		 }
  }
-        function Makeplotly(x, y1, y2, y3)
+        function MakePlot(x, y1, y2, y3)
          {  
-        trace1 ={
-        x: x, 
-        y: y1,
-        line: {width: 3}, 
-        marker: {
-        line: {width: 2}, 
-        size: 7, 
-        symbol: 'cirle'
-        }, 
-        mode: 'lines+markers', 
-        name: 'No of eq', 
-        type: 'scatter', 
-        uid: '9023be', 
-        yaxis: 'y1'
-        };
-       trace2 = {
-       x: x, 
-       y: y2, 
-       line: {
-       color: 'rgb(44, 160, 44)', 
-       width: 3
-       }, 
-       marker: {
-       line: {width: 2}, 
-       size: 7, 
-       symbol: 'square'
-       }, 
-       mode: 'lines+markers', 
-       name: 'Avg. magnitude', 
-       type: 'scatter', 
-       uid: '7155f3', 
-       yaxis: 'y2'
-       };
-       trace3 = {
-       x: x, 
-       y: y3, 
-       line: {
-       color: 'rgb(255, 127, 14)', 
-       width: 3
-       }, 
-      marker: {
-      line: {width: 2}, 
-      size: 7, 
-      symbol:'star'
-     }, 
-     mode: 'lines+markers', 
-     name: 'Avg. damage index', 
-     type: 'scatter', 
-     uid: '784d8d',
-     yaxis: 'y3'
-    };
-         
-data = [trace1, trace2, trace3];
-layout = {
-  autosize: false, 
-  bargap: 0.2, 
-  bargroupgap: 0, 
-  barmode: 'group', 
-  boxgap: 0.3, 
-  boxgroupgap: 0.3, 
-  boxmode: 'overlay', 
-  dragmode: 'zoom', 
-  font: {
-    color: '#444', 
-    family: '"Open sans", verdana, arial, sans-serif', 
-    size: 12
-  }, 
-  height: 550, 
-  hidesources: true, 
-  hovermode: 'x', 
-  legend: {
-    x: 1.04761904762, 
-    y: 0.966666666667, 
-    bgcolor: 'rgba(255, 255, 255, 0)', 
-    bordercolor: '#444', 
-    borderwidth: 0, 
-    font: {
-      color: '', 
-      family: '', 
-      size: 0
-    }, 
-    traceorder: 'normal', 
-    xanchor: 'left', 
-    yanchor: 'top'
-  }, 
-  margin: {
-    r: 10, 
-    t: 100, 
-    autoexpand: true, 
-    b: 80, 
-    l: 80, 
-    pad: 0
-  }, 
-  paper_bgcolor: '#fff', 
-  plot_bgcolor: '#fff', 
-  separators: '.,', 
-  showlegend: true, 
-  smith: false, 
-  title: '', 
-  titlefont: {
-    color: '', 
-    family: '', 
-    size: 0
-  }, 
-  width: 1300, 
-  xaxis: {
-    anchor: 'y', 
-    autorange: false, 
-    autotick: true, 
-    domain: [0.08, 0.8], 
-    dtick: 2, 
-    exponentformat: 'B', 
-    gridcolor: '#eee', 
-    gridwidth: 1, 
-    linecolor: '#444', 
-    linewidth: 1, 
-    mirror: false, 
-    nticks: 0, 
-    overlaying: false, 
-    position: 0, 
-    range: [1000, 2016], 
-    rangemode: 'normal', 
-    showexponent: 'all', 
-    showgrid: false, 
-    showline: false, 
-    showticklabels: true, 
-    tick0: 0, 
-    tickangle: 'auto', 
-    tickcolor: '#444', 
-    tickfont: {
-      color: '', 
-      family: '', 
-      size: 0
-    }, 
-    ticklen: 5, 
-    ticks: '', 
-    tickwidth: 1, 
-    title: 'Year', 
-    titlefont: {
-      color: '', 
-      family: '', 
-      size: 0
-    }, 
-    type: 'linear', 
-    zeroline: false, 
-    zerolinecolor: '#444', 
-    zerolinewidth: 1
-  }, 
-  yaxis: {
-    anchor: 'x', 
-    autorange: false, 
-    autotick: true, 
-    domain: [0, 1], 
-    dtick: 5, 
-    exponentformat: 'B', 
-    gridcolor: '#eee', 
-    gridwidth: 1, 
-    linecolor: '#444', 
-    linewidth: 1, 
-    mirror: false, 
-    nticks: 0, 
-    overlaying: false, 
-    position: 0, 
-    range: [1.0, 10.0], 
-    rangemode: 'normal', 
-    showexponent: 'all', 
-    showgrid: true, 
-    showline: false, 
-    showticklabels: true, 
-    tick0: 0, 
-    tickangle: 'auto', 
-    tickcolor: '#444', 
-    tickfont: {
-      color: '', 
-      family: '', 
-      size: 0
-    }, 
-    ticklen: 5, 
-    ticks: '', 
-    tickwidth: 1, 
-    title: 'No. of earthquakes', 
-    titlefont: {
-      color: '', 
-      family: '', 
-      size: 0
-    }, 
-    type: 'linear', 
-    zeroline: true, 
-    zerolinecolor: '#444', 
-    zerolinewidth: 1
-  }, 
-  yaxis2: {
-    anchor: 'x', 
-    autorange: false, 
-    autotick: true, 
-    domain: [0, 1], 
-    dtick: 5, 
-    exponentformat: 'B', 
-    gridcolor: '#eee', 
-    gridwidth: 1, 
-    linecolor: '#444', 
-    linewidth: 1, 
-    mirror: false, 
-    nticks: 0, 
-    overlaying: 'y', 
-    position: 0, 
-    range: [2.0, 12.0], 
-    rangemode: 'normal', 
-    showexponent: 'all', 
-    showgrid: true, 
-    showline: false, 
-    showticklabels: true, 
-    side: 'right', 
-    tick0: 0, 
-    tickangle: 'auto', 
-    tickcolor: '#444', 
-    tickfont: {
-      color: '', 
-      family: '', 
-      size: 0
-    }, 
-    ticklen: 5, 
-    ticks: '', 
-    tickwidth: 1, 
-    title: 'Avg. Magnitude', 
-    titlefont: {
-      color: '', 
-      family: '', 
-      size: 0
-    }, 
-    type: 'linear', 
-    zeroline: true, 
-    zerolinecolor: '#444', 
-    zerolinewidth: 1
-  }, 
-  yaxis3: {
-    anchor: 'free', 
-    autorange: false, 
-    autotick: true, 
-    domain: [0, 1], 
-    dtick: 1, 
-    exponentformat: 'B', 
-    gridcolor: '#eee', 
-    gridwidth: 1, 
-    linecolor: '#444', 
-    linewidth: 1, 
-    mirror: false, 
-    nticks: 0, 
-    overlaying: 'y', 
-    position: 1, 
-    range: [1, 1000.46052631579], 
-    rangemode: 'normal', 
-    showexponent: 'all', 
-    showgrid: true, 
-    showline: false, 
-    showticklabels: true, 
-    side: 'right', 
-    tick0: 0, 
-    tickangle: 'auto', 
-    tickcolor: '#444', 
-    tickfont: {
-      color: '', 
-      family: '', 
-      size: 0
-    }, 
-    ticklen: 5, 
-    ticks: '', 
-    tickwidth: 1, 
-    title: 'Avg. damage index', 
-    titlefont: {
-      color: '', 
-      family: '', 
-      size: 0,
-        
-    }, 
-    type: 'linear', 
-    zeroline: true, 
-    zerolinecolor: '#444', 
-    zerolinewidth: 1
-  }
-};
+	    layout = {
+        chart: {
+            zoomType: 'xy'
+        },
+        title: {
+            text: "Earthquake Analytics"
+        },
+       
+        xAxis: [{
+            categories: x,
+            crosshair: true
+        }],
+        yAxis: [{ // 1st yAxis
+            title: {
+				enabled: false,
+                text: 'Frequency',
+                style: {
+                    color: 'green',
+					fontSize:'10px'
+                }
+            },
+            labels: {
+                format: '{value}',
 
+                style: {
+                    color: 'green',
+					fontSize:'11px'
+                }
+            },
+			crosshair: true
+
+        }, { // 2nd yAxis
+            title: {
+				enabled: false,
+                text: 'Intensity',
+                style: {
+                    color: 'blue',
+					fontSize:'10px'
+					
+                }
+            },
+            labels: {
+                format: '{value}',
+                style: {
+                    color: 'blue',
+					fontSize:'11px'
+                }
+            },
+            //opposite: true,
+			crosshair: true
+        },
+		{ // 3rd yAxis
+            labels: {
+				
+                format: '{value}',              
+                style: {
+                    color: 'red',
+					fontSize:'10px'
+                }
+            },
+            title: {
+				enabled: false,
+                text: 'Damage',
+                style: {
+                    color: 'red',
+					fontSize:'11px'
+                }
+            },
+            //opposite: true,
+			crosshair: true
+
+        }],
+        tooltip: {
+            shared: true
+        },
+        legend: {
+             itemStyle: {
+                 fontSize:'11px'
+              },
+            layout: 'horizontal',
+            align: 'left',
+            x: 170,
+            verticalAlign: 'top',
+            y: 55,
+			borderWidth: 0.5,
+            floating: false,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+        },
+        series: [{
+            name: 'Frequency',
+            type: 'spline',
+            yAxis: 0,
+            align: 'right',
+            data: y1,
+			color: 'green',
+			marker: {
+                enabled: true
+            },
+            tooltip: {
+                //valueSuffix: ' mm'
+            }
+
+        }, {
+            name: 'Intensity',
+            type: 'spline',
+            yAxis: 1,
+            data: y2,
+			color: 'blue',
+            marker: {
+                enabled: true
+            },
+            dashStyle: 'spline',
+            tooltip: {
+                //valueSuffix: ' mb'
+            }
+
+        }, {
+            name: 'Damage',
+            type: 'spline',
+			yAxis: 2,
+            data: y3,
+			color: 'red',
+			marker: {
+                enabled: true
+            },
+            tooltip: {
+                valueSuffix: ' M',
+				valuePrefix: '$'
+				
+            }
+        }]
+    }
 		 };     
 
 function redrawPlot(countryName,init)
 {	
-	//console.log(countryName);	
+
 processData(countryName,init);
+$('#epoch').highcharts().setTitle(null, { text: countryName });
 if(!init)
 {
-	epoch.data= data;
+    
+	$('#epoch').highcharts().xAxis[0].categories = x;
+	$('#epoch').highcharts().series[0].setData(y1,false);
+    $('#epoch').highcharts().series[1].setData(y2,false);
+    $('#epoch').highcharts().series[2].setData(y3,true);
 
-	Plotly.redraw(epoch);
 }
 }
 redrawPlot("PAKISTAN",true);
