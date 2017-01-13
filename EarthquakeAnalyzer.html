@@ -6,22 +6,62 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
        /* use chrome and not firefox*/
-      #map {
-        min-width: 600px; 
-		height: 500px; 
-		width: 50%;
-		margin: 0 auto; 
+       #mapbg{
+       	min-width: 600px; 
+       	background-color: rgba(255,255,255,0.5);
+       	height: 410px; 
+		width: 47%;
+		margin: 10px 20px 20px 20px;
+
 		float: left;
+       }
+       #chartbg{
+       	min-width: 600px; 
+       	background-color: rgba(255,255,255,0.5);
+       	height: 410px; 
+		width: 47%;
+		margin: 10px 20px 20px 20px; 
+		float: right;
+       }
+      #map {
+      	text-align: center;
+        min-width: 600px; 
+		height: 370px; 
+		width: 40%;
+		margin: 20px 20px 20px 20px;
+		float: left;
+		
       }
 	  #epoch{
 	  min-width: 600px; 
-	  height: 500px; 
-	  width: 50%;
-	  margin: 0 auto;
+	  height: 370px; 
+	  width: 40%;
+	  margin: 20px 20px 20px 20px;
 	  float: right;
 	  }
+	  #title{
+	  	background-color: #A9A9A9;
+	  	height: 80px;
+	  	text-align: center;
+	  	/* fonts : Trocchi , Palatino Linotype*/
+	    color: 	#ffffff;
+	    font-family: 'Palatino Linotype'; font-size: 14px; line-height: 14px; margin: 0 0 24px; text-align: center; 
+	    font-variant: small-caps;
+	  		  }
+	  		  
+	  	#inft{
+	    background-color: rgba(255,255,255,0.85);
+	  	height: 60px;
+	  	text-align: center;
+	  	/* fonts : Trocchi , Palatino Linotype*/
+	    color: 	#606060;
+	    font-family: 'Palatino Linotype'; font-size: 14px;
+	    margin: 10px 150px 20px 150px; 
+
+	   
+	  		  }
 	  h1 {
-	  text-align: center;
+	 
 	  }
 	  h4{
 	  	  text-align: right;
@@ -33,6 +73,8 @@
 		width: 100%;
         margin: 0;
         padding: 0;
+        background-image: url("bgimage.jpg");
+        background-size: cover;
       }
 	 </style>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
@@ -42,12 +84,16 @@
 	<script src="biggerPicture.js"></script>
     </head>
   <body>
-    <h1>Earthquake Analyzer</h1>
-    <div id="map" style=""></div>
-	<div id="epoch" style=""></div>
+    <div id="title" style=""><br><h1> Earthquake Analyzer</h1></div>
+    <div id="inft"><br>Welcome! Please select an earthquake from the map given on the left and view the data corresponding to the earthquake selected as a line graph on the right.
+   </div>
+  
+    <div id="mapbg" style=""> <div id="map" style=""> </div></div>
+    
+    
+	<div id="chartbg" ><div id="epoch" style=""></div></div>
 	
-	<hr/>
-	<h4>© Azqa, Jaya, Priyanka, Sneha</h4>
+	<hr/><h4>© Azqa, Jaya, Priyanka, Sneha</h4>
 	
 	<script src="epoch.js"></script>
 	<script src ="worldmap.js"></script>

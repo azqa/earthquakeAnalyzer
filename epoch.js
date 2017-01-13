@@ -29,7 +29,10 @@ x = [], y1 = [], y2= [], y3 = [];
             zoomType: 'xy'
         },
         title: {
-            text: "Earthquake Analytics"
+            text: "Earthquake Analytics",
+            style: {
+                color: '#606060'
+            }
         },
        
         xAxis: [{
@@ -41,7 +44,7 @@ x = [], y1 = [], y2= [], y3 = [];
 				enabled: false,
                 text: 'Frequency',
                 style: {
-                    color: 'green',
+                    color: '#FA1D2F',
 					fontSize:'10px'
                 }
             },
@@ -49,7 +52,7 @@ x = [], y1 = [], y2= [], y3 = [];
                 format: '{value}',
 
                 style: {
-                    color: 'green',
+                    color: '#FA1D2F',
 					fontSize:'11px'
                 }
             },
@@ -60,7 +63,7 @@ x = [], y1 = [], y2= [], y3 = [];
 				enabled: false,
                 text: 'Intensity',
                 style: {
-                    color: 'blue',
+                    color: '#CC4E5C',
 					fontSize:'10px'
 					
                 }
@@ -68,7 +71,7 @@ x = [], y1 = [], y2= [], y3 = [];
             labels: {
                 format: '{value}',
                 style: {
-                    color: 'blue',
+                    color: '#CC4E5C',
 					fontSize:'11px'
                 }
             },
@@ -78,17 +81,17 @@ x = [], y1 = [], y2= [], y3 = [];
 		{ // 3rd yAxis
             labels: {
 				
-                format: '{value}',              
+                format: '$'+'{value}'+'M',              
                 style: {
-                    color: 'red',
-					fontSize:'10px'
+                    color: '#8B475D',
+					fontSize:'11px'
                 }
             },
             title: {
 				enabled: false,
                 text: 'Damage',
                 style: {
-                    color: 'red',
+                    color: '#8B475D',
 					fontSize:'11px'
                 }
             },
@@ -110,7 +113,7 @@ x = [], y1 = [], y2= [], y3 = [];
             y: 55,
 			borderWidth: 0.5,
             floating: false,
-            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#F0F0F0'
         },
         series: [{
             name: 'Frequency',
@@ -118,7 +121,7 @@ x = [], y1 = [], y2= [], y3 = [];
             yAxis: 0,
             align: 'right',
             data: y1,
-			color: 'green',
+			color: '#FA1D2F',
 			marker: {
                 enabled: true
             },
@@ -131,7 +134,7 @@ x = [], y1 = [], y2= [], y3 = [];
             type: 'spline',
             yAxis: 1,
             data: y2,
-			color: 'blue',
+			color: '#CC4E5C',
             marker: {
                 enabled: true
             },
@@ -145,7 +148,7 @@ x = [], y1 = [], y2= [], y3 = [];
             type: 'spline',
 			yAxis: 2,
             data: y3,
-			color: 'red',
+			color: '#8B475D',
 			marker: {
                 enabled: true
             },
