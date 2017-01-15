@@ -19,16 +19,14 @@ var map;
         var pinColors=[];
          // Loop through the results array and place a marker for each  
       window.eqfeed_callback = function(results) {
+        
         for (var i = 0; i < results.features.length; i++) {
           var latLng = new google.maps.LatLng(results.features[i].LATITUDE, results.features[i].LONGITUDE);
           labels[i]= {
 			  'country' : results.features[i].COUNTRY,
 			  'tsunami' : results.features[i].FLAG_TSUNAMI
 		  };
-          if(results.features[i].DAMAGE <6)
-            pinColors[i]= '0000FF';
-          else
-            pinColors[i]='FF0000';
+
           var tmp={
             'lat':results.features[i].LATITUDE,
             'lng': results.features[i].LONGITUDE
@@ -36,7 +34,31 @@ var map;
           x.push(tmp);
          
         }//for
-      console.log(x);
+        var allRows=epochData;
+        console.log(allRows);
+        
+        var damagedata=[];
+        for(var i=0; i<allRows.length; i++)
+        {
+          row = allRows[i];
+          if(damagedata.indexOf(row.Country) != -1){
+            var accumulatedsum=damagedata[row.Country].value;
+            var newvalue= row.damageIndex/row.magnitude;
+            damagedata[row.Country].value= accumulatedsum+newvalue;
+          }//if
+          else
+          {
+             
+              damagedata.push({[row.Country]: 0});
+          }//else
+        }//for
+          
+
+
+console.log(allRows[0].damageIndex);
+ console.log(damagedata);
+
+     // console.log(x);
 var icon2 = "imageB.jpg";
 
       var markers = x.map(function(location, i) {
