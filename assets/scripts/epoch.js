@@ -35,6 +35,9 @@ x = [], y1 = [], y2= [], y3 = [];
 				fontWeight: 'bold'
             }
         },
+		subtitle: {
+			text: "blah"
+		},
        
         xAxis: [{
             categories: x,

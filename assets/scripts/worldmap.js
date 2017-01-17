@@ -8,7 +8,7 @@ var map;
 
         // Create a <script> tag and set the USGS URL as the source.
         var script = document.createElement('script');
-        script.src = 'assets/data/damage_new.js';
+        script.src = 'assets/data/damage.js';
         document.getElementsByTagName('head')[0].appendChild(script);
       }//initMap
 
