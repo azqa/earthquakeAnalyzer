@@ -38,25 +38,56 @@ var map;
         console.log(allRows);
         
         var damagedata=[];
+
+
         for(var i=0; i<allRows.length; i++)
         {
-          row = allRows[i];
-          if(damagedata.indexOf(row.Country) != -1){
-            var accumulatedsum=damagedata[row.Country].value;
-            var newvalue= row.damageIndex/row.magnitude;
-            damagedata[row.Country].value= accumulatedsum+newvalue;
+           row = allRows[i];
+          var cntry = row.Country;
+          if(damagedata.indexOf(cntry) == -1){
+            console.log(cntry);
+            damagedata.push({cntry : "0"});
           }//if
+        }
+        console.log(damagedata);
+
+
+
+       for(var i=0; i<allRows.length; i++)
+        {
+          row = allRows[i];
+          var cntry = row.Country;
+          //(cntry in damagedata)
+          //damagedata.indexOf(cntry) == -1
+          if(damagedata.indexOf(cntry) == -1){
+             console.log("in there");
+
+
+   /* if( damagedata.hasOwnProperty( el ) ) {
+     var accumulatedsum = parseFloat( damagedata[el] );
+    }
+  */
+            var accumulatedsum=damagedata[cntry];
+            console.log("accsum is "+damagedata[cntry]);
+            var newvalue= row.damageIndex/row.magnitude;
+            console.log("newvalue is "+ newvalue);
+            //console.log(accumulatedsum+newvalue);
+            damagedata[cntry]= accumulatedsum+newvalue; }//if
           else
-          {
-             
-              damagedata.push({[row.Country]: 0});
+          { console.log("in here");
+             var cntry = row.Country;
+              damagedata.push({cntry : "0"});
           }//else
         }//for
+
+
           
 
 
 console.log(allRows[0].damageIndex);
  console.log(damagedata);
+// console.log();
+ console.log(damagedata["CHINA"]);
 
      // console.log(x);
 var icon2 = "imageB.jpg";

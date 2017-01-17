@@ -29,22 +29,32 @@ x = [], y1 = [], y2= [], y3 = [];
             zoomType: 'xy'
         },
         title: {
-            text: "Earthquake Analytics",
+			 text:'',
             style: {
-                color: '#606060'
+                color: '#404040',
+				fontWeight: 'bold'
             }
         },
        
         xAxis: [{
             categories: x,
-            crosshair: true
+            crosshair: true,
+			labels: {
+                format: '{value}',
+
+                style: {
+                    color: '#404040',
+					fontSize:'11px',
+				    fontWeight: 'bold'
+                }
+			}
         }],
         yAxis: [{ // 1st yAxis
             title: {
 				enabled: false,
                 text: 'Frequency',
                 style: {
-                    color: '#FA1D2F',
+                    color: '#4c9696',
 					fontSize:'10px'
                 }
             },
@@ -52,8 +62,9 @@ x = [], y1 = [], y2= [], y3 = [];
                 format: '{value}',
 
                 style: {
-                    color: '#FA1D2F',
-					fontSize:'11px'
+                    color: '#4c9696',
+					fontSize:'11px',
+				    fontWeight: 'bold'
                 }
             },
 			crosshair: true
@@ -63,7 +74,7 @@ x = [], y1 = [], y2= [], y3 = [];
 				enabled: false,
                 text: 'Intensity',
                 style: {
-                    color: '#CC4E5C',
+                    color: '#a94763',
 					fontSize:'10px'
 					
                 }
@@ -71,8 +82,9 @@ x = [], y1 = [], y2= [], y3 = [];
             labels: {
                 format: '{value}',
                 style: {
-                    color: '#CC4E5C',
-					fontSize:'11px'
+                    color: '#a94763',
+					fontSize:'11px',
+					fontWeight: 'bold'
                 }
             },
             //opposite: true,
@@ -81,17 +93,18 @@ x = [], y1 = [], y2= [], y3 = [];
 		{ // 3rd yAxis
             labels: {
 				
-                format: '$'+'{value}'+'M',              
+                format:'{value}',              
                 style: {
-                    color: '#8B475D',
-					fontSize:'11px'
+                    color: '#461072',
+					fontSize:'11px',
+					fontWeight: 'bold'
                 }
             },
             title: {
 				enabled: false,
                 text: 'Damage',
                 style: {
-                    color: '#8B475D',
+                    color: '#461072',
 					fontSize:'11px'
                 }
             },
@@ -121,7 +134,7 @@ x = [], y1 = [], y2= [], y3 = [];
             yAxis: 0,
             align: 'right',
             data: y1,
-			color: '#FA1D2F',
+			color: '#4c9696',
 			marker: {
                 enabled: true
             },
@@ -134,7 +147,7 @@ x = [], y1 = [], y2= [], y3 = [];
             type: 'spline',
             yAxis: 1,
             data: y2,
-			color: '#CC4E5C',
+			color: '#a94763',
             marker: {
                 enabled: true
             },
@@ -148,15 +161,11 @@ x = [], y1 = [], y2= [], y3 = [];
             type: 'spline',
 			yAxis: 2,
             data: y3,
-			color: '#8B475D',
+			color: '#461072',
 			marker: {
                 enabled: true
-            },
-            tooltip: {
-                valueSuffix: ' M',
-				valuePrefix: '$'
-				
             }
+            
         }]
     }
 		 };     
