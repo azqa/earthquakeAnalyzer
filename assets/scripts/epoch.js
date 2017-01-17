@@ -74,7 +74,7 @@ x = [], y1 = [], y2= [], y3 = [];
 				enabled: false,
                 text: 'Intensity',
                 style: {
-                    color: '#461072',
+                    color: '#6a3f8e',
 					fontSize:'10px'
 					
                 }
@@ -82,7 +82,7 @@ x = [], y1 = [], y2= [], y3 = [];
             labels: {
                 format: '{value}',
                 style: {
-                    color: '#461072',
+                    color: '#6a3f8e',
 					fontSize:'11px',
 					fontWeight: 'bold'
                 }
@@ -147,7 +147,7 @@ x = [], y1 = [], y2= [], y3 = [];
             type: 'spline',
             yAxis: 1,
             data: y2,
-			color: '#461072',
+			color: '#6a3f8e',
             marker: {
                 enabled: true
             },
