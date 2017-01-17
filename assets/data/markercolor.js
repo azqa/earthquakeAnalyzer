@@ -20,7 +20,7 @@ var colordata= [
       "colr": "dark"
     },
     {
-      "Country": "TURKEMINSTAN",
+      "Country": "TURKMENISTAN",
       "val": 22224.6896,
       "colr": "dark"
     },
