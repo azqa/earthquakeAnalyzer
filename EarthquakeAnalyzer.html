@@ -4,9 +4,10 @@
   <head>
   	<meta charset="UTF-8">
   	<meta name="viewport" content="width= device-width, initial-scale=1.0"/>
-  	 <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+	   <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+	<script src="assets/lib/jquery.min.js"></script>
+  	 <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
      <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -59,11 +60,11 @@
 	
      
 	 </style>
-   <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://code.highcharts.com/highcharts.js"></script>
-	<script src="chartdata.js"></script>
-	<script src="biggerPicture.js"></script>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="assets/data/chartdata.js"></script>
+	<script src="assets/data/markercolor.js"></script>
+	<script src="assets/data/biggerPicture.js"></script>
     </head>
   <body >
    <div class="row">
@@ -71,13 +72,11 @@
     <!-- Brand and toggle get grouped for better mobile display -->
      <div class="navbar-header">
       <a class="navbar-brand" href="#">
-        <img src="assets/pulse.png" style="height: 40px; width: 45px;"/> <span style="font-family: 'Arial'; font-size: 30px;">Earthquake Analyzer</span>
+        <img src="assets/img/pulse.png" style="height: 40px; width: 45px;"/> <span style="font-family: 'Arial'; font-size: 30px;">Earthquake Analyzer</span>
       </a>
     </div>
 	</nav>
    <!--  wrapper -->
-
-        <!-- end navbar top -->
         <!--  page-wrapper -->
         <div class="container-fluid">
                 <!-- Page Header -->
@@ -123,13 +122,12 @@
 
     <!-- end wrapper -->
   
-	<script src="epoch.js"></script>
-	<script src ="worldmap.js"></script>
+	<script src="assets/scripts/epoch.js"></script>
+	<script src ="assets/scripts/worldmap.js"></script>
 	<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2sGhfk_6qEdfgC3Nf00GWqUQPLYyN4o8&callback=initMap"></script>
 	    <!-- Core Scripts - Include with every page -->
-    <script src="assets/plugins/jquery-1.10.2.js"></script>
-    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+
 
 
   </body>
