@@ -33,9 +33,9 @@ var map;
          if(results.features[i].COUNTRY == allR[j].Country)
           {
             if(allR[j].colr=="dark")
-            pinColors[i]="0000A0"; 
+            pinColors[i]="0000B3"; 
             else if(allR[j].colr=="light")
-              pinColors[i]="6666FF";
+              pinColors[i]="4D4DFF";
             else
               pinColors[i]="0000FF";
           }        
@@ -46,9 +46,9 @@ var map;
           {
             
             if(allR[j].colr=="dark")
-            pinColors[i]="A00000"; 
+            pinColors[i]="B30000"; 
             else if(allR[j].colr=="light")
-              pinColors[i]="FF6666";
+              pinColors[i]="FF4D4D";
             else
               pinColors[i]="FF0000";
 
