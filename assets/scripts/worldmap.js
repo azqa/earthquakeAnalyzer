@@ -81,7 +81,7 @@ var map;
             position: location,
 			index: i,
             color: 'blue', 
-            icon: new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColors[i],
+            icon: new google.maps.MarkerImage("https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColors[i],
               new google.maps.Size(21, 34),
               new google.maps.Point(0,0),
               new google.maps.Point(10, 34))
