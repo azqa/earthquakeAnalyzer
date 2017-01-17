@@ -143,7 +143,7 @@ x = [], y1 = [], y2= [], y3 = [];
             }
 
         }, {
-            name: 'Intensity',
+            name: 'Magnitude',
             type: 'spline',
             yAxis: 1,
             data: y2,
@@ -187,5 +187,5 @@ if(!init)
 }
 }
 redrawPlot("PAKISTAN",true);
-     
+    $('[data-toggle="tooltip"]').tooltip();    
          

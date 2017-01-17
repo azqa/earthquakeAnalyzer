@@ -2,6 +2,9 @@
        * element that contains the map. */
        /* use chrome and not firefox*/
       
+	  .glyphicon-info-sign {
+		   float: right;
+	  }
       #map {
         min-width: 510px; 
 		min-height: 490px;
