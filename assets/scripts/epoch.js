@@ -74,7 +74,7 @@ x = [], y1 = [], y2= [], y3 = [];
 				enabled: false,
                 text: 'Intensity',
                 style: {
-                    color: '#a94763',
+                    color: '#461072',
 					fontSize:'10px'
 					
                 }
@@ -82,7 +82,7 @@ x = [], y1 = [], y2= [], y3 = [];
             labels: {
                 format: '{value}',
                 style: {
-                    color: '#a94763',
+                    color: '#461072',
 					fontSize:'11px',
 					fontWeight: 'bold'
                 }
@@ -95,7 +95,7 @@ x = [], y1 = [], y2= [], y3 = [];
 				
                 format:'{value}',              
                 style: {
-                    color: '#461072',
+                    color: '#a94763',
 					fontSize:'11px',
 					fontWeight: 'bold'
                 }
@@ -104,7 +104,7 @@ x = [], y1 = [], y2= [], y3 = [];
 				enabled: false,
                 text: 'Damage',
                 style: {
-                    color: '#461072',
+                    color: '#a94763',
 					fontSize:'11px'
                 }
             },
@@ -147,7 +147,7 @@ x = [], y1 = [], y2= [], y3 = [];
             type: 'spline',
             yAxis: 1,
             data: y2,
-			color: '#a94763',
+			color: '#461072',
             marker: {
                 enabled: true
             },
@@ -156,12 +156,13 @@ x = [], y1 = [], y2= [], y3 = [];
                 //valueSuffix: ' mb'
             }
 
+
         }, {
             name: 'Damage',
             type: 'spline',
 			yAxis: 2,
             data: y3,
-			color: '#461072',
+			color: '#a94763',
 			marker: {
                 enabled: true
             }
