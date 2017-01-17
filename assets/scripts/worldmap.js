@@ -92,7 +92,7 @@ var map;
 	   "<br/> <b>Tsunami? </b> " + (labels[mark.index].tsunami=='Tsu'?'Yes':'No') + 
 	   "<br/> <b>Frequency: </b>"+ composite[label].frequency + 
 	   "<br/> <b>Avg. Magnitude: </b>" + composite[label].magnitude + 
-	   "<br/> <b>Avg. Damage:</b> $" +  composite[label].damage + " M</span>";
+	   "<br/> <b>Avg. Damage:</b> " +  composite[label].damage + "</span>";
 
         var infowindow = new google.maps.InfoWindow({
           content: contentString

@@ -175,7 +175,7 @@ function redrawPlot(countryName,init)
 {	
 
 processData(countryName,init);
-$('#epoch').highcharts().setTitle(null, { text: countryName });
+$('#epoch').highcharts().setTitle(null, { text: "Currently viewing statistics for: " + countryName });
 if(!init)
 {
     
@@ -187,5 +187,5 @@ if(!init)
 }
 }
 redrawPlot("PAKISTAN",true);
-    $('[data-toggle="tooltip"]').tooltip();    
+ $('[data-toggle="tooltip"]').tooltip();   
          
