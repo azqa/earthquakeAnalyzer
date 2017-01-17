@@ -8,7 +8,7 @@ var map;
 
         // Create a <script> tag and set the USGS URL as the source.
         var script = document.createElement('script');
-        script.src = 'assets/data/damage.js';
+        script.src = 'assets/data/damage_new.js';
         document.getElementsByTagName('head')[0].appendChild(script);
       }//initMap
 
@@ -25,7 +25,10 @@ var map;
           var latLng = new google.maps.LatLng(results.features[i].LATITUDE, results.features[i].LONGITUDE);
           labels[i]= {
 			  'country' : results.features[i].COUNTRY,
-			  'tsunami' : results.features[i].FLAG_TSUNAMI
+			  'tsunami' : results.features[i].FLAG_TSUNAMI,
+			  'magnitude' : results.features[i].Magnitude,
+			  'damage' :  results.features[i].Damage,
+			  'year' :  results.features[i].YEAR
 		  };
       for (var j=0; j<allR.length; j++){
       if(results.features[i].FLAG_TSUNAMI=='Tsu')
@@ -89,10 +92,10 @@ var map;
           });
 		  var label = labels[mark.index].country;
        var contentString = "<span> <b>Place:</b> " + label+ 
+	   "<br/> <b>Year: </b>"+ labels[mark.index].year + 
 	   "<br/> <b>Tsunami? </b> " + (labels[mark.index].tsunami=='Tsu'?'Yes':'No') + 
-	   "<br/> <b>Frequency: </b>"+ composite[label].frequency + 
-	   "<br/> <b>Avg. Magnitude: </b>" + composite[label].magnitude + 
-	   "<br/> <b>Avg. Damage:</b> " +  composite[label].damage + "</span>";
+	   "<br/> <b>Magnitude: </b>" + labels[mark.index].magnitude + 
+	   "<br/> <b>Damage:</b> " +  labels[mark.index].damage + "</span>";
 
         var infowindow = new google.maps.InfoWindow({
           content: contentString
