@@ -1,5 +1,6 @@
 var data,layout;
 var x = [], y1 = [], y2= [], y3 = [];
+var tooltip_text;
 function processData(countryName,init) {	
 x = [], y1 = [], y2= [], y3 = [];
    var allRows=epochData;
@@ -18,6 +19,9 @@ x = [], y1 = [], y2= [], y3 = [];
            }
          console.log( 'X',x, 'Y',y1, 'Y2',y2, 'Y3', y3 );
          MakePlot(x, y1, y2, y3);
+		 tooltip_text = "Frequency: " + composite[countryName].frequency +
+	                   "<br />Average magnitude: " + composite[countryName].magnitude + 
+	                   "<br /> Average damage: " + composite[countryName].damage;
 		 if(init){
 		 Highcharts.chart('epoch',layout);
 		 }
@@ -29,16 +33,17 @@ x = [], y1 = [], y2= [], y3 = [];
             zoomType: 'xy'
         },
         title: {
-			 text:'',
+			useHTML: true,
+			text:'',
+			formatter: function() {
+                return '<span title="My custom title">' + this.value + '</span>';
+            },
             style: {
                 color: '#404040',
 				fontWeight: 'bold'
             }
         },
-		subtitle: {
-			text: "blah"
-		},
-       
+
         xAxis: [{
             categories: x,
             crosshair: true,
@@ -176,19 +181,21 @@ x = [], y1 = [], y2= [], y3 = [];
 
 function redrawPlot(countryName,init)
 {	
-
 processData(countryName,init);
-$('#epoch').highcharts().setTitle(null, { text: "Currently viewing statistics for: " + countryName });
+$('#epoch').highcharts().setTitle({ text: "Currently viewing statistics for: " + countryName});
+
+    $("#stats").attr('data-original-title', tooltip_text);
+
+
 if(!init)
 {
-    
 	$('#epoch').highcharts().xAxis[0].categories = x;
 	$('#epoch').highcharts().series[0].setData(y1,false);
     $('#epoch').highcharts().series[1].setData(y2,false);
     $('#epoch').highcharts().series[2].setData(y3,true);
+}
+}
 
-}
-}
 redrawPlot("PAKISTAN",true);
- $('[data-toggle="tooltip"]').tooltip();   
-         
+
+$("[data-toggle='tooltip']").tooltip();

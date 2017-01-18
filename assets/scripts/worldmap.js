@@ -90,7 +90,7 @@ var map;
               new google.maps.Point(10, 34))
 
           });
-		  var label = labels[mark.index].country;
+	   var label = labels[mark.index].country;
        var contentString = "<span> <b>Place:</b> " + label+ 
 	   "<br/> <b>Year: </b>"+ labels[mark.index].year + 
 	   "<br/> <b>Tsunami? </b> " + (labels[mark.index].tsunami=='Tsu'?'Yes':'No') + 

@@ -5,6 +5,11 @@
 	  .glyphicon-info-sign {
 		   float: right;
 	  }
+
+	  .btn {
+		  float: left;
+		  padding: 3px;
+	  }
       #map {
 		min-width: 500px;
         max-width: 100%; 		 
